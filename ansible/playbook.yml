@@ -1,0 +1,21 @@
+---
+- name: Configurar ambiente TechStore
+  hosts: techstore
+  gather_facts: false
+
+  tasks:
+
+    - name: Criar página da TechStore
+      ansible.builtin.copy:
+        content: |
+          <html>
+            <head>
+              <meta charset="UTF-8">
+              <title>TechStore</title>
+            </head>
+            <body>
+              <h1>TechStore</h1>
+              <p>Ambiente configurado pelo Ansible.</p>
+            </body>
+          </html>
+        dest: /usr/share/nginx/html/index.html
